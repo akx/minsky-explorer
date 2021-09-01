@@ -19,13 +19,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
-      - run: yarn
-#      - run: yarn build --base=/nessu/
-#        env:
-#          GENERATE_SOURCEMAP: "false"
-#      - name: Deploy
-#        uses: JamesIves/github-pages-deploy-action@4.0.0
-#        with:
-#          branch: gh-pages
-#          folder: dist
-#        if: ${{ github.event_name == 'push' }}
+      - run: yarn --frozen-lockfile
+      - run: yarn vite build --base=/minsky-explorer/
+        env:
+          GENERATE_SOURCEMAP: "false"
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.0.0
+        with:
+          branch: gh-pages
+          folder: dist
+        if: ${{ github.event_name == 'push' }}

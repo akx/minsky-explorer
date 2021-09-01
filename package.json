@@ -1,11 +1,14 @@
 {
   "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
+    "leva": "^0.9.13",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
