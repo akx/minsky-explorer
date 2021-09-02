@@ -18,7 +18,10 @@ function useEvent(
 
 function computeCanvasSize() {
   return Math.floor(
-    Math.min(window.innerWidth * 0.8 - 200, window.innerHeight * 0.8),
+    Math.max(
+      400,
+      Math.min(window.innerWidth * 0.8 - 200, window.innerHeight * 0.8),
+    ),
   );
 }
 
